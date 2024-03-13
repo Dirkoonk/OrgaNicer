@@ -9,7 +9,7 @@ OrgaNicer::OrgaNicer(QWidget *parent)
 }
 
 
-// Test
+// Tes
 
 
 OrgaNicer::~OrgaNicer()
