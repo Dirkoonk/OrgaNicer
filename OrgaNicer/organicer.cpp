@@ -13,8 +13,6 @@ OrgaNicer::OrgaNicer(QWidget *parent)
 }
 
 
-// Tes qwoefgqwefoiqgwezqw
-
 
 OrgaNicer::~OrgaNicer()
 {

@@ -2,6 +2,9 @@
 #define ORGANICER_H
 
 #include <QMainWindow>
+#include <QPushButton>
+//#include <QMenu>
+//#include <QAction>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -19,5 +22,11 @@ public:
 
 private:
     Ui::OrgaNicer *ui;
+    QPushButton *neuerknopf;
+ //   QMenu *fileMenu;
+   // QAction *newAct;
+
+//private slots:
+ //   void newFile();
 };
 #endif // ORGANICER_H
