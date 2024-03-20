@@ -24,9 +24,15 @@ private:
     Ui::OrgaNicer *ui;
     QPushButton *neuerknopf;
     QMenu *fileMenu;
-    QAction *newAct;
+    QAction *newAct1;
+    QAction *newAct2;
+    QAction *newAct3;
+    QAction *newAct4;
 
 private slots:
-    void newFile();
+    void Uebersicht();
+    void Marcel();
+    void Marlon();
+    void Paul();
 };
 #endif // ORGANICER_H

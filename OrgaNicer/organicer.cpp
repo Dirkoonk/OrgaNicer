@@ -11,19 +11,40 @@ OrgaNicer::OrgaNicer(QWidget *parent)
     neuerknopf->setGeometry(20, 120, 50, 30);
     connect(neuerknopf, SIGNAL(clicked()), qApp, SLOT(quit()));
 
-    ui->setupUi(this);
-    fileMenu = menuBar()->addMenu(tr("&File"));
-    newAct = new QAction(tr("&New"),this);
-    fileMenu->addAction(newAct);
-    connect(newAct, &QAction::triggered,this, &OrgaNicer::newFile);
+    fileMenu = menuBar()->addMenu(tr("&Putzplan"));
+    newAct1 = new QAction(tr("&Übersicht"),this);
+    fileMenu->addAction(newAct1);
+    connect(newAct1, &QAction::triggered,this, &OrgaNicer::Uebersicht);
+
+    newAct2 = new QAction(tr("&Marcel"),this);
+    fileMenu->addAction(newAct2);
+    connect(newAct2, &QAction::triggered,this, &OrgaNicer::Marcel);
+
+    newAct3 = new QAction(tr("&Marlon"),this);
+    fileMenu->addAction(newAct3);
+    connect(newAct3, &QAction::triggered,this, &OrgaNicer::Marcel);
+
+    newAct4 = new QAction(tr("&Paul"),this);
+    fileMenu->addAction(newAct4);
+    connect(newAct4, &QAction::triggered,this, &OrgaNicer::Marcel);
+
 
 
 }
 
+void OrgaNicer::Uebersicht(){
 
+}
 
+void OrgaNicer::Marlon(){
 
-void OrgaNicer::newFile(){
+}
+
+void OrgaNicer::Paul(){
+
+}
+
+void OrgaNicer::Marcel(){
 
 }
 
