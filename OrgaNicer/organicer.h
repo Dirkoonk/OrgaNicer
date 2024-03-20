@@ -3,14 +3,15 @@
 
 #include <QMainWindow>
 #include <QPushButton>
-//#include <QMenu>
-//#include <QAction>
+#include <QMenu>
+#include <QAction>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class OrgaNicer;
 }
 QT_END_NAMESPACE
+
 
 class OrgaNicer : public QMainWindow
 {
@@ -30,3 +31,5 @@ private:
  //   void newFile();
 };
 #endif // ORGANICER_H
+
+
