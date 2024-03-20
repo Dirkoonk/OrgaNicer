@@ -24,11 +24,17 @@ public:
 private:
     Ui::OrgaNicer *ui;
     QPushButton *neuerknopf;
- //   QMenu *fileMenu;
-   // QAction *newAct;
+    QMenu *fileMenu;
+    QAction *newAct1;
+    QAction *newAct2;
+    QAction *newAct3;
+    QAction *newAct4;
 
-//private slots:
- //   void newFile();
+private slots:
+    void Uebersicht();
+    void Marcel();
+    void Marlon();
+    void Paul();
 };
 #endif // ORGANICER_H
 
