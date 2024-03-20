@@ -33,7 +33,7 @@ OrgaNicer::OrgaNicer(QWidget *parent)
 }
 
 void OrgaNicer::Uebersicht(){
-
+//Hier sachen machen
 }
 
 void OrgaNicer::Marlon(){

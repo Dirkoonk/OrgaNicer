@@ -12,7 +12,6 @@ class OrgaNicer;
 }
 QT_END_NAMESPACE
 
-
 class OrgaNicer : public QMainWindow
 {
     Q_OBJECT
@@ -37,5 +36,3 @@ private slots:
     void Paul();
 };
 #endif // ORGANICER_H
-
-
