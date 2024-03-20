@@ -10,6 +10,21 @@ OrgaNicer::OrgaNicer(QWidget *parent)
     neuerknopf = new QPushButton("Test", this);
     neuerknopf->setGeometry(20, 120, 50, 30);
     connect(neuerknopf, SIGNAL(clicked()), qApp, SLOT(quit()));
+
+    ui->setupUi(this);
+    fileMenu = menuBar()->addMenu(tr("&File"));
+    newAct = new QAction(tr("&New"),this);
+    fileMenu->addAction(newAct);
+    connect(newAct, &QAction::triggered,this, &OrgaNicer::newFile);
+
+
+}
+
+
+
+
+void OrgaNicer::newFile(){
+
 }
 
 
