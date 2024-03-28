@@ -13,7 +13,18 @@
   <property name="windowTitle">
    <string>OrgaNicer</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTableView" name="tableView">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>621</width>
+      <height>551</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
@@ -23,8 +34,50 @@
      <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuPutzplan">
+    <property name="title">
+     <string>Putzplan</string>
+    </property>
+    <addaction name="actionAufgaben"/>
+    <addaction name="action_bersicht"/>
+   </widget>
+   <widget class="QMenu" name="menuBenutzer">
+    <property name="title">
+     <string>Benutzer</string>
+    </property>
+    <addaction name="actionPaul"/>
+    <addaction name="actionMarlon"/>
+    <addaction name="actionMarcel"/>
+   </widget>
+   <addaction name="menuPutzplan"/>
+   <addaction name="menuBenutzer"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionPaul">
+   <property name="text">
+    <string>Paul</string>
+   </property>
+  </action>
+  <action name="actionMarlon">
+   <property name="text">
+    <string>Marlon</string>
+   </property>
+  </action>
+  <action name="actionMarcel">
+   <property name="text">
+    <string>Marcel</string>
+   </property>
+  </action>
+  <action name="action_bersicht">
+   <property name="text">
+    <string>Übersicht</string>
+   </property>
+  </action>
+  <action name="actionAufgaben">
+   <property name="text">
+    <string>Aufgaben</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

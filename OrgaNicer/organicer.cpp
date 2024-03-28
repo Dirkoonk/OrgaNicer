@@ -7,6 +7,8 @@ OrgaNicer::OrgaNicer(QWidget *parent)
 {
     ui->setupUi(this);
     this->setFixedSize(500,500);
+
+    /*
     neuerknopf = new QPushButton("Test", this);
     neuerknopf->setGeometry(20, 120, 50, 30);
     connect(neuerknopf, SIGNAL(clicked()), qApp, SLOT(quit()));
@@ -27,7 +29,7 @@ OrgaNicer::OrgaNicer(QWidget *parent)
     newAct4 = new QAction(tr("&Paul"),this);
     fileMenu->addAction(newAct4);
     connect(newAct4, &QAction::triggered,this, &OrgaNicer::Marcel);
-
+    */
 
 
 }
