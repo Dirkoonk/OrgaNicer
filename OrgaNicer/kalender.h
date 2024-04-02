@@ -1,4 +1,4 @@
-#ifndef KALENDER_H
+ifndef KALENDER_H
 #define KALENDER_H
 
 #include <QComboBox>

@@ -5,6 +5,7 @@
 #include <QPushButton>
 #include <QMenu>
 #include <QAction>
+#include  <QString>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -22,17 +23,9 @@ public:
 
 private:
     Ui::OrgaNicer *ui;
-    QPushButton *neuerknopf;
-    QMenu *fileMenu;
-    QAction *newAct1;
-    QAction *newAct2;
-    QAction *newAct3;
-    QAction *newAct4;
 
 private slots:
-    void Uebersicht();
-    void Marcel();
-    void Marlon();
-    void Paul();
+
+    void on_calendarWidget_currentPageChanged(int year, int month);
 };
 #endif // ORGANICER_H

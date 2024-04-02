@@ -14,52 +14,14 @@
    <string>OrgaNicer</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QDateTimeEdit" name="dateTimeEdit">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>340</y>
-      <width>194</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QCalendarWidget" name="calendarWidget">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>461</width>
-      <height>311</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QScrollBar" name="horizontalScrollBar">
-    <property name="geometry">
-     <rect>
-      <x>349</x>
-      <y>310</y>
-      <width>451</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QScrollBar" name="verticalScrollBar">
-    <property name="geometry">
-     <rect>
-      <x>325</x>
-      <y>0</y>
-      <width>21</width>
-      <height>311</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
-    </property>
-   </widget>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QCalendarWidget" name="calendarWidget"/>
+    </item>
+    <item>
+     <widget class="QListWidget" name="AListe"/>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -67,7 +29,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>17</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuPutzplan">

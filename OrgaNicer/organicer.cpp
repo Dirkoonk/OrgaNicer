@@ -6,49 +6,12 @@ OrgaNicer::OrgaNicer(QWidget *parent)
     , ui(new Ui::OrgaNicer)
 {
     ui->setupUi(this);
-    this->setFixedSize(500,500);
 
-    /*
-    neuerknopf = new QPushButton("Test", this);
-    neuerknopf->setGeometry(20, 120, 50, 30);
-    connect(neuerknopf, SIGNAL(clicked()), qApp, SLOT(quit()));
 
-    fileMenu = menuBar()->addMenu(tr("&Putzplan"));
-    newAct1 = new QAction(tr("&Übersicht"),this);
-    fileMenu->addAction(newAct1);
-    connect(newAct1, &QAction::triggered,this, &OrgaNicer::Uebersicht);
-
-    newAct2 = new QAction(tr("&Marcel"),this);
-    fileMenu->addAction(newAct2);
-    connect(newAct2, &QAction::triggered,this, &OrgaNicer::Marcel);
-
-    newAct3 = new QAction(tr("&Marlon"),this);
-    fileMenu->addAction(newAct3);
-    connect(newAct3, &QAction::triggered,this, &OrgaNicer::Marcel);
-
-    newAct4 = new QAction(tr("&Paul"),this);
-    fileMenu->addAction(newAct4);
-    connect(newAct4, &QAction::triggered,this, &OrgaNicer::Marcel);
-    */
 
 
 }
 
-void OrgaNicer::Uebersicht(){
-//Hier sachen machen
-}
-
-void OrgaNicer::Marlon(){
-
-}
-
-void OrgaNicer::Paul(){
-
-}
-
-void OrgaNicer::Marcel(){
-
-}
 
 
 
@@ -56,3 +19,57 @@ OrgaNicer::~OrgaNicer()
 {
     delete ui;
 }
+
+void OrgaNicer::on_calendarWidget_currentPageChanged(int year, int month)
+{
+    ui->AListe->clear();
+
+
+    if(month==1||month==4||month==7||month==10){
+
+        QListWidgetItem *Bad = new QListWidgetItem;
+        QListWidgetItem *Wischen = new QListWidgetItem;
+        QListWidgetItem *Garten = new QListWidgetItem;
+
+        Bad->setText("Bad putzen Paul");
+        Wischen->setText("Wischen Marlon");
+        Garten->setText("Garten Marcel");
+
+        ui->AListe->addItem(Bad);
+        ui->AListe->addItem(Wischen);
+        ui->AListe->addItem(Garten);
+
+    }
+    if(month==2||month==5||month==8||month==11){
+
+        QListWidgetItem *Bad = new QListWidgetItem;
+        QListWidgetItem *Wischen = new QListWidgetItem;
+        QListWidgetItem *Garten = new QListWidgetItem;
+
+        Bad->setText("Bad putzen Marcel");
+        Wischen->setText("Wischen Paul");
+        Garten->setText("Garten Marlon");
+
+        ui->AListe->addItem(Bad);
+        ui->AListe->addItem(Wischen);
+        ui->AListe->addItem(Garten);
+
+    }
+    if(month==3||month==6||month==9||month==12){
+
+        QListWidgetItem *Bad = new QListWidgetItem;
+        QListWidgetItem *Wischen = new QListWidgetItem;
+        QListWidgetItem *Garten = new QListWidgetItem;
+
+        Bad->setText("Bad putzen Marlon");
+        Wischen->setText("Wischen Marcel");
+        Garten->setText("Garten Paul");
+
+        ui->AListe->addItem(Bad);
+        ui->AListe->addItem(Wischen);
+        ui->AListe->addItem(Garten);
+
+    }
+
+}
+
