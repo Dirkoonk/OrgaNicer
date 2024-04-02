@@ -2,8 +2,6 @@
 #include "./ui_organicer.h"
 
 // aktuelles Datum einlesen
-
-
 int Amonth = QDate::currentDate().month();
 
 OrgaNicer::OrgaNicer(QWidget *parent)
@@ -12,12 +10,7 @@ OrgaNicer::OrgaNicer(QWidget *parent)
 {
     ui->setupUi(this);
 
-
-
-
 }
-
-
 
 
 OrgaNicer::~OrgaNicer()
@@ -28,7 +21,7 @@ OrgaNicer::~OrgaNicer()
 
 void SpeicherListe(QListWidget liste){
 
-     QString dateiPfad = "listWidget.dat";
+     QString dateiPfad = "liste.dat";
 
     QFile datei(dateiPfad);
 
@@ -52,7 +45,7 @@ void SpeicherListe(QListWidget liste){
 }
 void LeseListe(QListWidget liste){
 
-    QString dateiPfad = "listWidget.dat";
+    QString dateiPfad = "liste.dat";
 
     QFile datei(dateiPfad);
 

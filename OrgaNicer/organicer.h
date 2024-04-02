@@ -8,7 +8,7 @@
 #include <QAction>
 #include <QFile>
 #include <QDataStream>
-#include  <QString>
+#include <QString>
 #include <QListWidget>
 
 QT_BEGIN_NAMESPACE
