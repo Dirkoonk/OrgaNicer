@@ -2,6 +2,7 @@
 #include "./ui_organicer.h"
 
 // aktuelles Datum einlesen
+
 int Amonth = QDate::currentDate().month();
 
 OrgaNicer::OrgaNicer(QWidget *parent)
