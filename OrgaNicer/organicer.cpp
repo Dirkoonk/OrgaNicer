@@ -20,6 +20,19 @@ OrgaNicer::~OrgaNicer()
 }
 
 
+void OrgaNicer::ListeDurchsuchenPassendEinblenden(QString searchDate_str)
+{
+    for(int i = 0; i < AListe.count(); i++){
+        QListWidgetItem *item = ui->AList.item(i);
+        if(item&&item->text().contains(searchDate_str,Qt::CaseIntensive)){
+            item->setHidden(false);
+        }
+        else{
+            item->setHidden(true);
+        }
+    }
+}
+
 void SpeicherListe(QListWidget liste){
 
      QString dateiPfad = "liste.dat";
