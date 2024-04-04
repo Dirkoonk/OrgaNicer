@@ -178,8 +178,11 @@ void OrgaNicer::on_calendarWidget_clicked(const QDate &date)
     QString dateString = date.toString("yyyy.MM.dd");
 
     // String vom Textbox
-      QString text = lineEdit->text();
 
+
+    QString text = ui->lineEdit->text();
+
+    dateString = dateString + text;
 
     erstelleItem(ui->AListe, dateString);
 }
