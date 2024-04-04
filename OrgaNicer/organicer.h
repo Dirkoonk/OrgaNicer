@@ -35,7 +35,7 @@ private:
     void erstelleItem(QListWidget *listWidget, QString listWidgetText);
     void on_pushButton_clicked();
     void DateiInhaltLoeschen();
-
+    void MonatsplanInit();
 
 private slots:
 

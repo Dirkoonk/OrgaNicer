@@ -111,6 +111,26 @@ void OrgaNicer::LeseListe(QListWidget *liste){
     }
 }
 
+void OrgaNicer::MonatsplanInit(){
+    QString jahr,monat,datum,bad,wischen,garten;
+    date="2024.01.00  Paul: Bad";
+
+    for(int j = 2024;j < 2100; j++ ){
+        for(int m = 1;m<=12;m++){
+            if(m==1||m==4||m==7||m==10){
+                jahr = QString("%1").arg(j);
+                monat = QString("%1").arg(m);
+
+                text= "Bad putzen Marlon";
+                text="Wischen Marcel";
+                text="Garten Paul";
+
+                datum = jahr+"."+monat+".00  "+bad;
+            }
+        }
+    }
+}
+
 
 void OrgaNicer::on_calendarWidget_currentPageChanged(int year, int month)
 {
