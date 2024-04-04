@@ -182,9 +182,11 @@ void OrgaNicer::on_calendarWidget_clicked(const QDate &date)
 
     QString text = ui->lineEdit->text();
 
-    dateString = dateString + text;
+    dateString = dateString +"  " + text;
 
     erstelleItem(ui->AListe, dateString);
+
+    ui->lineEdit->clear();
 }
 
 
