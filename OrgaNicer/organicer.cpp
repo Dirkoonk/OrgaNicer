@@ -111,6 +111,7 @@ void OrgaNicer::LeseListe(QListWidget *liste){
     }
 }
 
+
 void OrgaNicer::on_calendarWidget_currentPageChanged(int year, int month)
 {
 
@@ -174,17 +175,20 @@ void OrgaNicer::erstelleItem(QListWidget *listWidget, QString listWidgetText) {
 
 void OrgaNicer::on_calendarWidget_clicked(const QDate &date)
 {
-    // String aus Kalender Datum
-    QString dateString = date.toString("yyyy.MM.dd");
+    if(ui->lineEdit->text().length() >= 2){
+        // String aus Kalender Datum
+        QString dateString = date.toString("yyyy.MM.dd");
 
-    // String vom Textbox
+        // String vom Textbox
 
 
-    QString text = ui->lineEdit->text();
+        QString text = ui->lineEdit->text();
 
-    dateString = dateString +"  " + text;
+        dateString = dateString +"  " + text;
 
-    erstelleItem(ui->AListe, dateString);
+        erstelleItem(ui->AListe, dateString);
+    }
+
 
     ui->lineEdit->clear();
 }
