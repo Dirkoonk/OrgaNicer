@@ -26,7 +26,7 @@ void OrgaNicer::ListeDurchsuchenPassendEinblenden(QString searchDate_str)
 {
     for(int i = 0; i < ui->AListe->count(); i++){
         QListWidgetItem *item = ui->AListe->item(i);
-        if(ui->AListe->item(i)->text().contains(searchDate_str,Qt::CaseInsensitive)){
+        if( item->text().contains(searchDate_str,Qt::CaseInsensitive)){
             ui->AListe->item(i)->setHidden(false);
         }
         else{
@@ -114,55 +114,15 @@ void OrgaNicer::LeseListe(QListWidget *liste){
 
 void OrgaNicer::on_calendarWidget_currentPageChanged(int year, int month)
 {
-
-    ui->AListe->clear();
-
-    if(month==1||month==4||month==7||month==10){
-
-        QListWidgetItem *Bad = new QListWidgetItem;
-        QListWidgetItem *Wischen = new QListWidgetItem;
-        QListWidgetItem *Garten = new QListWidgetItem;
-
-        Bad->setText("Bad putzen Paul");
-        Wischen->setText("Wischen Marlon");
-        Garten->setText("Garten Marcel");
-
-        ui->AListe->addItem(Bad);
-        ui->AListe->addItem(Wischen);
-        ui->AListe->addItem(Garten);
-
-    }
-    if(month==2||month==5||month==8||month==11){
-
-        QListWidgetItem *Bad = new QListWidgetItem;
-        QListWidgetItem *Wischen = new QListWidgetItem;
-        QListWidgetItem *Garten = new QListWidgetItem;
-
-        Bad->setText("Bad putzen Marcel");
-        Wischen->setText("Wischen Paul");
-        Garten->setText("Garten Marlon");
-
-        ui->AListe->addItem(Bad);
-        ui->AListe->addItem(Wischen);
-        ui->AListe->addItem(Garten);
+    QString month_str = QString("%1").arg(month);
+    QString year_str= QString("%1").arg(year);
 
 
-    }
-    if(month==3||month==6||month==9||month==12){
+    QString fullDate_str = year_str + "." + "0" + month_str;
+    qDebug() << fullDate_str;
 
-        QListWidgetItem *Bad = new QListWidgetItem;
-        QListWidgetItem *Wischen = new QListWidgetItem;
-        QListWidgetItem *Garten = new QListWidgetItem;
+    ListeDurchsuchenPassendEinblenden(fullDate_str);
 
-        Bad->setText("Bad putzen Marlon");
-        Wischen->setText("Wischen Marcel");
-        Garten->setText("Garten Paul");
-
-        ui->AListe->addItem(Bad);
-        ui->AListe->addItem(Wischen);
-        ui->AListe->addItem(Garten);
-
-    }
 
 }
 
