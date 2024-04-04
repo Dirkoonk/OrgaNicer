@@ -10,6 +10,8 @@
 #include <QDataStream>
 #include <QString>
 #include <QListWidget>
+#include <QApplication>
+#include <QLineEdit>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -38,5 +40,6 @@ private slots:
 
     void on_calendarWidget_currentPageChanged(int year, int month);
     void on_calendarWidget_clicked(const QDate &date);
+    void on_lineEdit_cursorPositionChanged(int arg1, int arg2);
 };
 #endif // ORGANICER_H
