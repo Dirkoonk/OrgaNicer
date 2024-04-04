@@ -140,5 +140,25 @@ void OrgaNicer::on_calendarWidget_currentPageChanged(int year, int month)
     }
 
 
+
+    void OrgaNicer::erstelleItem(QListWidget *listWidget, QString listWidgetText) {
+        // Ein neues QListWidgetItem erstellen und Text anhängen
+        QListWidgetItem *item = new QListWidgetItem(listWidgetText);
+        listWidget->addItem(item);
+    }
+
+    void OrgaNicer::on_calendarWidget_clicked(const QDate &date)
+    {
+
+        QString dateString = date.toString("dd.MM.yyyy");
+
+
+    }
+
+
 }
+
+
+
+
 

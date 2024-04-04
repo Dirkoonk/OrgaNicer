@@ -30,9 +30,13 @@ private:
     void SpeicherListe(QListWidget *liste);
     void LeseListe(QListWidget *liste);
     void ListeDurchsuchenPassendEinblenden(QString searchDate_str);
+    void erstelleItem(QListWidget *listWidget, QString listWidgetText);
+    void on_pushButton_clicked();
+
 
 private slots:
 
     void on_calendarWidget_currentPageChanged(int year, int month);
+    void on_calendarWidget_clicked(const QDate &date);
 };
 #endif // ORGANICER_H
