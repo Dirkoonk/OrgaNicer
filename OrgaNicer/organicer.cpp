@@ -35,6 +35,28 @@ void OrgaNicer::ListeDurchsuchenPassendEinblenden(QString searchDate_str)
     }
 }
 
+void OrgaNicer::DateiInhaltLoeschen(){
+
+    QString filePath = "liste.dat";
+
+    // QFile-Objekt erstellen
+    QFile file(filePath);
+
+    // Datei öffnen
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
+        qDebug() << "Fehler beim Öffnen der Datei zum Schreiben:" << file.errorString();
+    }
+
+    // Dateiinhalt löschen
+    file.resize(0);
+
+    // Datei schließen
+    file.close();
+
+    qDebug() << "Dateiinhalt erfolgreich gelöscht.";
+
+}
+
 void OrgaNicer::SpeicherListe(QListWidget *liste){
 
      QString dateiPfad = "liste.dat";

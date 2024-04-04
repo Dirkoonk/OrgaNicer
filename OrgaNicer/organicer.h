@@ -34,6 +34,7 @@ private:
     void ListeDurchsuchenPassendEinblenden(QString searchDate_str);
     void erstelleItem(QListWidget *listWidget, QString listWidgetText);
     void on_pushButton_clicked();
+    void DateiInhaltLoeschen();
 
 
 private slots:
