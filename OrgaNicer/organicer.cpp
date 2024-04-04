@@ -22,9 +22,9 @@ OrgaNicer::~OrgaNicer()
 
 void OrgaNicer::ListeDurchsuchenPassendEinblenden(QString searchDate_str)
 {
-    for(int i = 0; i < AListe.count(); i++){
-        QListWidgetItem *item = ui->AList.item(i);
-        if(item&&item->text().contains(searchDate_str,Qt::CaseIntensive)){
+    for(int i = 0; i < ui->AListe->count(); i++){
+        QListWidgetItem *item = ui->AListe->item(i);
+        if(item&&item->text().contains(searchDate_str,Qt::CaseInsensitive)){
             item->setHidden(false);
         }
         else{
