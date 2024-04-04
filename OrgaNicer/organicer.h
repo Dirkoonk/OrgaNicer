@@ -27,8 +27,8 @@ public:
 
 private:
     Ui::OrgaNicer *ui;
-    void SpeicherListe(QListWidget liste);
-    void LeseListe(QListWidget liste);
+    void SpeicherListe(QListWidget *liste);
+    void LeseListe(QListWidget *liste);
     void ListeDurchsuchenPassendEinblenden(QString searchDate_str);
 
 private slots:

@@ -33,7 +33,7 @@ void OrgaNicer::ListeDurchsuchenPassendEinblenden(QString searchDate_str)
     }
 }
 
-void SpeicherListe(QListWidget liste){
+void OrgaNicer::SpeicherListe(QListWidget *liste){
 
      QString dateiPfad = "liste.dat";
 
@@ -44,11 +44,11 @@ void SpeicherListe(QListWidget liste){
         out.setVersion(QDataStream::Qt_6_6);
 
         // Schreiben der Anzahl der Elemente
-        out << liste.count();
+        out << liste->count();
 
         // Schreiben der Elemente
-        for (int i = 0; i < liste.count(); ++i) {
-            out << liste.item(i)->text();
+        for (int i = 0; i < liste->count(); ++i) {
+            out << liste->item(i)->text();
         }
 
         datei.close();
@@ -57,13 +57,13 @@ void SpeicherListe(QListWidget liste){
         qDebug() << "Fehler beim Öffnen der Datei zum Schreiben.";
     }
 }
-void LeseListe(QListWidget liste){
+void OrgaNicer::LeseListe(QListWidget *liste){
 
     QString dateiPfad = "liste.dat";
 
     QFile datei(dateiPfad);
 
-    QListWidget gelesenesListWidget;
+
 
     if (datei.open(QIODevice::ReadOnly)) {
         QDataStream in(&datei);
@@ -77,7 +77,7 @@ void LeseListe(QListWidget liste){
         for (int i = 0; i < count; ++i) {
             QString element;
             in >> element;
-            gelesenesListWidget.addItem(element);
+            liste->addItem(element);
         }
 
         datei.close();
@@ -121,6 +121,7 @@ void OrgaNicer::on_calendarWidget_currentPageChanged(int year, int month)
         ui->AListe->addItem(Wischen);
         ui->AListe->addItem(Garten);
 
+
     }
     if(month==3||month==6||month==9||month==12){
 
@@ -137,6 +138,7 @@ void OrgaNicer::on_calendarWidget_currentPageChanged(int year, int month)
         ui->AListe->addItem(Garten);
 
     }
+
 
 }
 
