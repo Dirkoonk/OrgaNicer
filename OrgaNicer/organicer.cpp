@@ -112,8 +112,9 @@ void OrgaNicer::LeseListe(QListWidget *liste){
 }
 
 void OrgaNicer::MonatsplanInit(){
+
     QString jahr,monat,datum,bad,wischen,garten;
-    date="2024.01.00  Paul: Bad";
+
 
     for(int j = 2024;j < 2100; j++ ){
         for(int m = 1;m<=12;m++){
@@ -121,15 +122,85 @@ void OrgaNicer::MonatsplanInit(){
                 jahr = QString("%1").arg(j);
                 monat = QString("%1").arg(m);
 
-                text= "Bad putzen Marlon";
-                text="Wischen Marcel";
-                text="Garten Paul";
+                bad= "Bad putzen Marlon";
+                wischen="Wischen Marcel";
+                garten="Garten Paul";
 
-                datum = jahr+"."+monat+".00  "+bad;
+                if(m <=9){
+                    datum = jahr + "." + "0" + monat+".00  "+bad;
+                    ui->AListe->addItem(datum);
+                    datum = jahr + "." + monat+".00  "+wischen;
+                    ui->AListe->addItem(datum);
+                    datum = jahr + "." + monat+".00  "+garten;
+                    ui->AListe->addItem(datum);
+                }
+                else{
+                    datum = jahr + "." + monat+".00  "+bad;
+                    ui->AListe->addItem(datum);
+                    datum = jahr + "." + monat+".00  "+wischen;
+                    ui->AListe->addItem(datum);
+                    datum = jahr + "." + monat+".00  "+garten;
+                    ui->AListe->addItem(datum);
+                }
+
             }
+            if(m==2||m==5||m==8||m==11){
+                jahr = QString("%1").arg(j);
+                monat = QString("%1").arg(m);
+
+                bad= "Bad putzen Paul";
+                wischen="Wischen Marlon";
+                garten="Garten Marcel";
+
+                if(m <=9){
+                    datum = jahr + "." + "0" + monat+".00  "+bad;
+                    ui->AListe->addItem(datum);
+                    datum = jahr + "." + monat+".00  "+wischen;
+                    ui->AListe->addItem(datum);
+                    datum = jahr + "." + monat+".00  "+garten;
+                    ui->AListe->addItem(datum);
+                }
+                else{
+                    datum = jahr + "." + monat+".00  "+bad;
+                    ui->AListe->addItem(datum);
+                    datum = jahr + "." + monat+".00  "+wischen;
+                    ui->AListe->addItem(datum);
+                    datum = jahr + "." + monat+".00  "+garten;
+                    ui->AListe->addItem(datum);
+                }
+
+            }
+            if(m==3||m==6||m==9||m==12){
+                jahr = QString("%1").arg(j);
+                monat = QString("%1").arg(m);
+
+                bad= "Bad putzen Marcel";
+                wischen="Wischen Paul";
+                garten="Garten Marlon";
+
+                if(m <=9){
+                    datum = jahr + "." + "0" + monat+".00  "+bad;
+                    ui->AListe->addItem(datum);
+                    datum = jahr + "." + monat+".00  "+wischen;
+                    ui->AListe->addItem(datum);
+                    datum = jahr + "." + monat+".00  "+garten;
+                    ui->AListe->addItem(datum);
+                }
+                else{
+                    datum = jahr + "." + monat+".00  "+bad;
+                    ui->AListe->addItem(datum);
+                    datum = jahr + "." + monat+".00  "+wischen;
+                    ui->AListe->addItem(datum);
+                    datum = jahr + "." + monat+".00  "+garten;
+                    ui->AListe->addItem(datum);
+                }
+
+            }
+
         }
     }
 }
+
 
 
 void OrgaNicer::on_calendarWidget_currentPageChanged(int year, int month)
@@ -177,4 +248,16 @@ void OrgaNicer::on_calendarWidget_clicked(const QDate &date)
 
 
 
+
+
+void OrgaNicer::on_pushButton_clicked()
+{
+    MonatsplanInit();
+}
+
+
+void OrgaNicer::on_pushButton_2_clicked()
+{
+    DateiInhaltLoeschen();
+}
 
