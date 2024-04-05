@@ -5,7 +5,7 @@
 
 // aktuelles Datum einlesen
 
-int Amonth = QDate::currentDate().month();
+QDate date = QDate::currentDate();
 
 OrgaNicer::OrgaNicer(QWidget *parent)
     : QMainWindow(parent)
@@ -114,96 +114,120 @@ void OrgaNicer::LeseListe(QListWidget *liste){
 void OrgaNicer::MonatsplanInit(){
 
     QString jahr,monat,datum,bad,wischen,garten;
+    bool InitStatus=0;
 
     qDebug()<< "Start der Initialisierung";
 
-
-    for(int j = 2010;j < 2040; j++ ){
-        for(int m = 1;m<=12;m++){
-            if(m==1||m==4||m==7||m==10){
-                jahr = QString("%1").arg(j);
-                monat = QString("%1").arg(m);
-
-                bad= "Bad putzen Marlon";
-                wischen="Wischen Marcel";
-                garten="Garten Paul";
-
-                if(m <=9){
-                    datum = jahr + "." + "0" + monat+".00  "+bad;
-                    ui->AListe->addItem(datum);
-                    datum = jahr + "." + "0" + monat+".00  "+wischen;
-                    ui->AListe->addItem(datum);
-                    datum = jahr + "." + "0" + monat+".00  "+garten;
-                    ui->AListe->addItem(datum);
-                }
-                else{
-                    datum = jahr + "." + monat+".00  "+bad;
-                    ui->AListe->addItem(datum);
-                    datum = jahr + "." + monat+".00  "+wischen;
-                    ui->AListe->addItem(datum);
-                    datum = jahr + "." + monat+".00  "+garten;
-                    ui->AListe->addItem(datum);
-                }
-
-
-            }
-            if(m==2||m==5||m==8||m==11){
-                jahr = QString("%1").arg(j);
-                monat = QString("%1").arg(m);
-
-                bad= "Bad putzen Paul";
-                wischen="Wischen Marlon";
-                garten="Garten Marcel";
-
-                if(m <=9){
-                    datum = jahr + "." + "0" + monat+".00  "+bad;
-                    ui->AListe->addItem(datum);
-                    datum = jahr + "." + "0" + monat+".00  "+wischen;
-                    ui->AListe->addItem(datum);
-                    datum = jahr + "." + "0" + monat+".00  "+garten;
-                    ui->AListe->addItem(datum);
-                }
-                else{
-                    datum = jahr + "." + monat+".00  "+bad;
-                    ui->AListe->addItem(datum);
-                    datum = jahr + "." + monat+".00  "+wischen;
-                    ui->AListe->addItem(datum);
-                    datum = jahr + "." + monat+".00  "+garten;
-                    ui->AListe->addItem(datum);
-                }
-
-
-            }
-            if(m==3||m==6||m==9||m==12){
-                jahr = QString("%1").arg(j);
-                monat = QString("%1").arg(m);
-
-                bad= "Bad putzen Marcel";
-                wischen="Wischen Paul";
-                garten="Garten Marlon";
-
-                if(m <=9){
-                    datum = jahr + "." + "0" + monat+".00  "+bad;
-                    ui->AListe->addItem(datum);
-                    datum = jahr + "." + "0" + monat+".00  "+wischen;
-                    ui->AListe->addItem(datum);
-                    datum = jahr + "." + "0" + monat+".00  "+garten;
-                    ui->AListe->addItem(datum);
-                }
-                else{
-                    datum = jahr + "." + monat+".00  "+bad;
-                    ui->AListe->addItem(datum);
-                    datum = jahr + "." + monat+".00  "+wischen;
-                    ui->AListe->addItem(datum);
-                    datum = jahr + "." + monat+".00  "+garten;
-                    ui->AListe->addItem(datum);
-                }
-
-
-            }
+    for(int i = 0; i < ui->AListe->count(); i++){
+        QListWidgetItem *item = ui->AListe->item(i);
+        if( item->text().contains("00.00.00",Qt::CaseInsensitive)){
+            InitStatus =1;
+            qDebug()<< "Staus1";
+            break;
+        }
+        else{
+           InitStatus =0;
+           qDebug()<< "Status0";
 
         }
     }
+
+    if(InitStatus){
+        qDebug()<< "bereits initialisiert";
+        ui->textBrowser->setText("Kalender wurde bereits initialisiert");
+    }
+    else{
+        qDebug()<<"Initialisierung";
+        ui->AListe->addItem("00.00.00");
+        for(int j = 2010;j < 2040; j++ ){
+            for(int m = 1;m<=12;m++){
+                if(m==1||m==4||m==7||m==10){
+                    jahr = QString("%1").arg(j);
+                    monat = QString("%1").arg(m);
+
+                    bad= "Bad putzen Marlon";
+                    wischen="Wischen Marcel";
+                    garten="Garten Paul";
+
+                    if(m <=9){
+                        datum = jahr + "." + "0" + monat+".00  "+bad;
+                        ui->AListe->addItem(datum);
+                        datum = jahr + "." + "0" + monat+".00  "+wischen;
+                        ui->AListe->addItem(datum);
+                        datum = jahr + "." + "0" + monat+".00  "+garten;
+                        ui->AListe->addItem(datum);
+                    }
+                    else{
+                        datum = jahr + "." + monat+".00  "+bad;
+                        ui->AListe->addItem(datum);
+                        datum = jahr + "." + monat+".00  "+wischen;
+                        ui->AListe->addItem(datum);
+                        datum = jahr + "." + monat+".00  "+garten;
+                        ui->AListe->addItem(datum);
+                    }
+
+
+                }
+                if(m==2||m==5||m==8||m==11){
+                    jahr = QString("%1").arg(j);
+                    monat = QString("%1").arg(m);
+
+                    bad= "Bad putzen Paul";
+                    wischen="Wischen Marlon";
+                    garten="Garten Marcel";
+
+                    if(m <=9){
+                        datum = jahr + "." + "0" + monat+".00  "+bad;
+                        ui->AListe->addItem(datum);
+                        datum = jahr + "." + "0" + monat+".00  "+wischen;
+                        ui->AListe->addItem(datum);
+                        datum = jahr + "." + "0" + monat+".00  "+garten;
+                        ui->AListe->addItem(datum);
+                    }
+                    else{
+                        datum = jahr + "." + monat+".00  "+bad;
+                        ui->AListe->addItem(datum);
+                        datum = jahr + "." + monat+".00  "+wischen;
+                        ui->AListe->addItem(datum);
+                        datum = jahr + "." + monat+".00  "+garten;
+                        ui->AListe->addItem(datum);
+                    }
+
+
+                }
+                if(m==3||m==6||m==9||m==12){
+                    jahr = QString("%1").arg(j);
+                    monat = QString("%1").arg(m);
+
+                    bad= "Bad putzen Marcel";
+                    wischen="Wischen Paul";
+                    garten="Garten Marlon";
+
+                    if(m <=9){
+                        datum = jahr + "." + "0" + monat+".00  "+bad;
+                        ui->AListe->addItem(datum);
+                        datum = jahr + "." + "0" + monat+".00  "+wischen;
+                        ui->AListe->addItem(datum);
+                        datum = jahr + "." + "0" + monat+".00  "+garten;
+                        ui->AListe->addItem(datum);
+                    }
+                    else{
+                        datum = jahr + "." + monat+".00  "+bad;
+                        ui->AListe->addItem(datum);
+                        datum = jahr + "." + monat+".00  "+wischen;
+                        ui->AListe->addItem(datum);
+                        datum = jahr + "." + monat+".00  "+garten;
+                        ui->AListe->addItem(datum);
+                    }
+
+
+                }
+
+            }
+        }
+    }
+    qDebug()<< date.toString("yyyy.MM.00");
+    ListeDurchsuchenPassendEinblenden(date.toString("yyyy.MM.00"));
 }
 
 
