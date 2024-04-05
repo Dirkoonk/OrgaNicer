@@ -43,5 +43,6 @@ private slots:
     void on_calendarWidget_clicked(const QDate &date);
 
     void on_pushButton_2_clicked();
+    void on_Start_clicked();
 };
 #endif // ORGANICER_H

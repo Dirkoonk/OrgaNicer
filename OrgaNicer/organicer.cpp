@@ -115,8 +115,10 @@ void OrgaNicer::MonatsplanInit(){
 
     QString jahr,monat,datum,bad,wischen,garten;
 
+    qDebug()<< "Start der Initialisierung";
 
-    for(int j = 2024;j < 2100; j++ ){
+
+    for(int j = 2010;j < 2040; j++ ){
         for(int m = 1;m<=12;m++){
             if(m==1||m==4||m==7||m==10){
                 jahr = QString("%1").arg(j);
@@ -129,9 +131,9 @@ void OrgaNicer::MonatsplanInit(){
                 if(m <=9){
                     datum = jahr + "." + "0" + monat+".00  "+bad;
                     ui->AListe->addItem(datum);
-                    datum = jahr + "." + monat+".00  "+wischen;
+                    datum = jahr + "." + "0" + monat+".00  "+wischen;
                     ui->AListe->addItem(datum);
-                    datum = jahr + "." + monat+".00  "+garten;
+                    datum = jahr + "." + "0" + monat+".00  "+garten;
                     ui->AListe->addItem(datum);
                 }
                 else{
@@ -142,6 +144,7 @@ void OrgaNicer::MonatsplanInit(){
                     datum = jahr + "." + monat+".00  "+garten;
                     ui->AListe->addItem(datum);
                 }
+
 
             }
             if(m==2||m==5||m==8||m==11){
@@ -155,9 +158,9 @@ void OrgaNicer::MonatsplanInit(){
                 if(m <=9){
                     datum = jahr + "." + "0" + monat+".00  "+bad;
                     ui->AListe->addItem(datum);
-                    datum = jahr + "." + monat+".00  "+wischen;
+                    datum = jahr + "." + "0" + monat+".00  "+wischen;
                     ui->AListe->addItem(datum);
-                    datum = jahr + "." + monat+".00  "+garten;
+                    datum = jahr + "." + "0" + monat+".00  "+garten;
                     ui->AListe->addItem(datum);
                 }
                 else{
@@ -168,6 +171,7 @@ void OrgaNicer::MonatsplanInit(){
                     datum = jahr + "." + monat+".00  "+garten;
                     ui->AListe->addItem(datum);
                 }
+
 
             }
             if(m==3||m==6||m==9||m==12){
@@ -181,9 +185,9 @@ void OrgaNicer::MonatsplanInit(){
                 if(m <=9){
                     datum = jahr + "." + "0" + monat+".00  "+bad;
                     ui->AListe->addItem(datum);
-                    datum = jahr + "." + monat+".00  "+wischen;
+                    datum = jahr + "." + "0" + monat+".00  "+wischen;
                     ui->AListe->addItem(datum);
-                    datum = jahr + "." + monat+".00  "+garten;
+                    datum = jahr + "." + "0" + monat+".00  "+garten;
                     ui->AListe->addItem(datum);
                 }
                 else{
@@ -194,6 +198,7 @@ void OrgaNicer::MonatsplanInit(){
                     datum = jahr + "." + monat+".00  "+garten;
                     ui->AListe->addItem(datum);
                 }
+
 
             }
 
@@ -208,9 +213,15 @@ void OrgaNicer::on_calendarWidget_currentPageChanged(int year, int month)
     QString month_str = QString("%1").arg(month);
     QString year_str= QString("%1").arg(year);
 
+    QString fullDate_str;
 
-    QString fullDate_str = year_str + "." + "0" + month_str;
-    qDebug() << fullDate_str;
+    if(month  <=9){
+    fullDate_str = year_str + "." + "0" + month_str;
+    }
+    else{
+    fullDate_str = year_str + "."  + month_str;
+    }
+
 
     ListeDurchsuchenPassendEinblenden(fullDate_str);
 
@@ -248,16 +259,14 @@ void OrgaNicer::on_calendarWidget_clicked(const QDate &date)
 
 
 
-
-
-void OrgaNicer::on_pushButton_clicked()
-{
-    MonatsplanInit();
-}
-
-
 void OrgaNicer::on_pushButton_2_clicked()
 {
     DateiInhaltLoeschen();
+}
+
+void OrgaNicer::on_Start_clicked()
+{
+    qDebug() << "clicked" ;
+    MonatsplanInit();
 }
 
