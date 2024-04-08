@@ -32,20 +32,20 @@
    <widget class="QListWidget" name="Erledigt">
     <property name="geometry">
      <rect>
-      <x>580</x>
-      <y>300</y>
+      <x>560</x>
+      <y>330</y>
       <width>101</width>
-      <height>171</height>
+      <height>141</height>
      </rect>
     </property>
    </widget>
    <widget class="QListWidget" name="AListe">
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>300</y>
+      <x>180</x>
+      <y>330</y>
       <width>151</width>
-      <height>171</height>
+      <height>151</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -99,63 +99,18 @@ selection-color:rgb(0,255,0);
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>400</y>
-      <width>133</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Start">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>310</y>
-      <width>206</width>
-      <height>35</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>206</width>
-      <height>0</height>
-     </size>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-    background-color: rgb(255, 170, 0);
-    border-style: outset;
-    border-width: 2px;
-    border-radius: 10px;
-    border-color: rgb(255, 255, 127);
-    font: bold 14px;
-    min-width: 10em;
-    padding: 6px;
-}
-QPushButton:pressed {
-    background-color: rgb(255, 255, 0);
-    border-style: inset;
-}</string>
-    </property>
-    <property name="text">
-     <string>Start</string>
-    </property>
-   </widget>
-   <widget class="QTextBrowser" name="textBrowser">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>440</y>
-      <width>161</width>
-      <height>61</height>
+      <x>0</x>
+      <y>320</y>
+      <width>141</width>
+      <height>51</height>
      </rect>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>360</y>
+      <x>0</x>
+      <y>290</y>
       <width>75</width>
       <height>24</height>
      </rect>
@@ -167,8 +122,8 @@ QPushButton:pressed {
    <widget class="QRadioButton" name="radioButton">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>380</y>
+      <x>80</x>
+      <y>300</y>
       <width>89</width>
       <height>20</height>
      </rect>
@@ -177,33 +132,32 @@ QPushButton:pressed {
      <string>Löschen</string>
     </property>
    </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1201</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuPutzplan">
-    <property name="title">
-     <string>Putzplan</string>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>300</y>
+      <width>161</width>
+      <height>16</height>
+     </rect>
     </property>
-    <addaction name="actionAufgaben"/>
-    <addaction name="action_bersicht"/>
-   </widget>
-   <widget class="QMenu" name="menuBenutzer">
-    <property name="title">
-     <string>Benutzer</string>
+    <property name="text">
+     <string>To Do's</string>
     </property>
-    <addaction name="actionPaul"/>
-    <addaction name="actionMarlon"/>
-    <addaction name="actionMarcel"/>
    </widget>
-   <addaction name="menuPutzplan"/>
-   <addaction name="menuBenutzer"/>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>300</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Erledigt</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionPaul">
