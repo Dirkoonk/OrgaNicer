@@ -6,14 +6,23 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>880</width>
-    <height>499</height>
+    <width>897</width>
+    <height>515</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>OrgaNicer</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <property name="minimumSize">
     <size>
      <width>880</width>
@@ -34,37 +43,80 @@
      <rect>
       <x>20</x>
       <y>0</y>
-      <width>688</width>
-      <height>461</height>
+      <width>861</width>
+      <height>491</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
+    <layout class="QVBoxLayout" name="_2" stretch="10,10">
+     <property name="spacing">
+      <number>10</number>
+     </property>
+     <property name="sizeConstraint">
+      <enum>QLayout::SetNoConstraint</enum>
+     </property>
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
      <item>
       <widget class="QCalendarWidget" name="calendarWidget">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
        <property name="styleSheet">
-        <string notr="true">QCalendarWidget QToolButton{
+        <string notr="true">/* Hintergrundfarbe und Rahmen des Kalenderwidgets */
+QCalendarWidget {
+    background-color: #f0f0f0; /* Hellgrau */
+    border: 2px solid #444444; /* Dunkelgrau */
+}
 
+/* Schaltflächen für die Navigation zwischen Monaten */
+QCalendarWidget QToolButton {
 height:60px;
 width:150px;
-color:black;
 font-size:20px;
 icon-size:56px,56px;
-background-color:rgb(85, 85, 255);
-
+    background-color: #cccccc; /* Grau */
+    color: #000000; /* Schwarz */
 }
 
-QCalendarWidget QWidget{
-alternate-background-color:rgb(128,128,128);
-
+/* Schaltflächen für die Auswahl eines bestimmten Datums */
+QCalendarWidget QToolButton:hover {
+    background-color: #888888; /* Dunkelgrau */
+    color: #ffffff; /* Weiß */
 }
 
-QCalendarWidget QAbstractItemView:enabled {
+/* Hintergrundfarbe und Textfarbe der Datumsbereiche */
+QCalendarWidget QAbstractItemView {
+    alternate-background-color: #e0e0e0; /* Mittelgrau */
+    color: #000000; /* Schwarz */
+}
 
-font-size:18px;
-color:rgb(180,180,180);
-background-color:black;
-selection-background-color:rgb(64,64,64);
-selection-color:rgb(0,255,0);
+/* Markierte Tage */
+QCalendarWidget QAbstractItemView:selected {
+    background-color: #0055cc; /* Blau */
+    color: #ffffff; /* Weiß */
+}
+
+/* Kopfzeile des Kalenderwidgets */
+QCalendarWidget QWidget#qt_calendar_navigationbar {
+    background-color: #444444; /* Dunkelgrau */
+    color: #ffffff; /* Weiß */
+    border: none;
 }</string>
        </property>
       </widget>
@@ -77,6 +129,31 @@ selection-color:rgb(0,255,0);
           <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
             <widget class="QPushButton" name="pushButton_2">
+             <property name="styleSheet">
+              <string notr="true">/* Hintergrundfarbe und Rahmen des Buttons */
+QPushButton {
+    background-color: lightblue;
+    border: 2px solid darkblue;
+    border-radius: 5px; /* Abrunde die Ecken des Buttons */
+}
+
+/* Textfarbe und Schriftart */
+QPushButton {
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Hover-Zustand */
+QPushButton:hover {
+    background-color: blue;
+}
+
+/* Aktiver Zustand */
+QPushButton:pressed {
+    background-color: darkblue;
+}</string>
+             </property>
              <property name="text">
               <string>reset Datei</string>
              </property>
@@ -84,6 +161,47 @@ selection-color:rgb(0,255,0);
            </item>
            <item>
             <widget class="QRadioButton" name="radioButton">
+             <property name="styleSheet">
+              <string notr="true">/* Hintergrundfarbe und Rahmen des Radio-Buttons */
+QRadioButton {
+    background-color: #f0f0f0; /* Hellgrau */
+    color: #000000; /* Schwarz */
+    border: 1px solid #444444; /* Dunkelgrau */
+    border-radius: 8px; /* Abgerundete Ecken */
+    padding: 6px; /* Innenabstand */
+}
+
+/* Hintergrundfarbe und Textfarbe des markierten Radio-Buttons */
+QRadioButton:checked {
+    background-color: #0055cc; /* Blau */
+    color: #ffffff; /* Weiß */
+}
+
+/* Hintergrundfarbe und Textfarbe des markierten Radio-Buttons beim Hovern */
+QRadioButton:hover:checked {
+    background-color: #003d99; /* Dunkelblau */
+    color: #ffffff; /* Weiß */
+}
+
+/* Hintergrundfarbe des markierten Radio-Buttons beim Hovern */
+QRadioButton::indicator:checked:hover {
+    background-color: #003d99; /* Dunkelblau */
+}
+
+/* Hintergrundfarbe des Indikators (Kreis) */
+QRadioButton::indicator {
+    background-color: #ffffff; /* Weiß */
+    border: 1px solid #444444; /* Dunkelgrau */
+    width: 12px; /* Breite */
+    height: 12px; /* Höhe */
+    border-radius: 6px; /* Abgerundete Ecken */
+}
+
+/* Hintergrundfarbe des Indikators (Kreis) beim Hovern */
+QRadioButton::indicator:hover {
+    background-color: #cccccc; /* Grau */
+}</string>
+             </property>
              <property name="text">
               <string>Löschen</string>
              </property>
@@ -105,14 +223,63 @@ selection-color:rgb(0,255,0);
           </spacer>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit"/>
+          <widget class="QLineEdit" name="lineEdit">
+           <property name="styleSheet">
+            <string notr="true">/* Hintergrundfarbe und Rahmen des QLineEdit */
+QLineEdit {
+    background-color: #ffffff; /* Weiß */
+    border: 1px solid #999999; /* Grau */
+    border-radius: 5px; /* Abgerundete Ecken */
+    padding: 5px; /* Innenabstand */
+}
+
+/* Hintergrundfarbe und Textfarbe des QLineEdit beim Hovern */
+QLineEdit:hover {
+    background-color: #f0f0f0; /* Hellgrau */
+}
+
+/* Hintergrundfarbe und Textfarbe des QLineEdit beim Fokus */
+QLineEdit:focus {
+    background-color: #e0e0e0; /* Hellgrau */
+    border: 1px solid #007acc; /* Blau */
+}
+
+/* Hintergrundfarbe und Textfarbe des QLineEdit beim Deaktivieren */
+QLineEdit:disabled {
+    background-color: #f0f0f0; /* Hellgrau */
+    color: #999999; /* Grau */
+}
+
+/* Hintergrundfarbe und Textfarbe des QLineEdit beim Eingabefehler */
+QLineEdit:!valid {
+    background-color: #ffe0e0; /* Hellrot */
+    border: 1px solid #cc0000; /* Dunkelrot */
+}</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_3">
+         <property name="spacing">
+          <number>0</number>
+         </property>
          <item>
           <widget class="QLabel" name="label">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+             <underline>true</underline>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+    background-color: rgb(255, 255, 127);
+	color: black;
+}</string>
+           </property>
            <property name="text">
             <string>To Do's</string>
            </property>
@@ -128,7 +295,7 @@ selection-color:rgb(0,255,0);
            </property>
            <property name="styleSheet">
             <string notr="true">QListWidget {
-    background-color: rgb(171, 171, 171);
+    background-color: rgb(255, 255, 127);
 }</string>
            </property>
           </widget>
@@ -137,15 +304,37 @@ selection-color:rgb(0,255,0);
        </item>
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_4">
+         <property name="spacing">
+          <number>0</number>
+         </property>
          <item>
           <widget class="QLabel" name="label_2">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+             <underline>true</underline>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+    background-color: rgb(255, 255, 127);
+	color: black;
+}</string>
+           </property>
            <property name="text">
             <string>Erledigt</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QListWidget" name="Erledigt"/>
+          <widget class="QListWidget" name="Erledigt">
+           <property name="styleSheet">
+            <string notr="true">QListWidget {
+    background-color: rgb(255, 255, 127);
+}</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>

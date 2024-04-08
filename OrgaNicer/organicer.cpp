@@ -13,8 +13,31 @@ OrgaNicer::OrgaNicer(QWidget *parent)
     , ui(new Ui::OrgaNicer)
 {
     ui->setupUi(this);
+
+
+   /* QVBoxLayout *mainLayout = new QVBoxLayout(ui->centralwidget);
+    mainLayout->setContentsMargins(0, 0, 0, 0); // Entferne Abstände um das Layout*/
+
+
+
+    /*// Füge das QCalendarWidget zum Layout hinzu
+    mainLayout->addWidget(ui->calendarWidget);
+    mainLayout->addWidget(ui->AListe);
+    mainLayout->addWidget(ui->Erledigt);
+    mainLayout->addWidget(ui->pushButton_2);
+    mainLayout->addWidget(ui->radioButton);
+    mainLayout->addWidget(ui->label);
+    mainLayout->addWidget(ui->label_2);
+
+
+    // Setze das Layout für das Hauptfenster
+    ui->centralwidget->setLayout(mainLayout);*/
+
     LeseListe(ui->AListe);
     MonatsplanInit();
+
+    this->resize(QSize(800, 600)); // Setze die gewünschte Anfangsgröße des Fensters
+    //this->setFixedSize(this->size()); // Verhindere das Ändern der Fenstergröße
 
 }
 
