@@ -29,7 +29,7 @@
    <property name="autoFillBackground">
     <bool>true</bool>
    </property>
-   <widget class="QListWidget" name="listWidget">
+   <widget class="QListWidget" name="Erledigt">
     <property name="geometry">
      <rect>
       <x>580</x>
@@ -162,6 +162,19 @@ QPushButton:pressed {
     </property>
     <property name="text">
      <string>reset Datei</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>380</y>
+      <width>89</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Löschen</string>
     </property>
    </widget>
   </widget>

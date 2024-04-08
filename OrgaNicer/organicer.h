@@ -44,5 +44,9 @@ private slots:
 
     void on_pushButton_2_clicked();
     void on_Start_clicked();
+    void on_AListe_itemDoubleClicked(QListWidgetItem *item);
+    void on_AListe_itemClicked(QListWidgetItem *item);
+    void on_Erledigt_itemClicked(QListWidgetItem *item);
+    void on_radioButton_clicked(bool checked);
 };
 #endif // ORGANICER_H

@@ -6,6 +6,7 @@
 // aktuelles Datum einlesen
 
 QDate date = QDate::currentDate();
+bool Loeschen = false;
 
 OrgaNicer::OrgaNicer(QWidget *parent)
     : QMainWindow(parent)
@@ -295,5 +296,44 @@ void OrgaNicer::on_Start_clicked()
 {
     qDebug() << "clicked" ;
     MonatsplanInit();
+}
+
+
+
+
+void OrgaNicer::on_AListe_itemDoubleClicked(QListWidgetItem *item)
+{
+    delete item;
+}
+
+
+void OrgaNicer::on_AListe_itemClicked(QListWidgetItem *item)
+{
+    if(Loeschen){
+         delete item;
+    }
+    else{
+    erstelleItem(ui->Erledigt, item->text());
+        delete item;
+    }
+}
+
+
+void OrgaNicer::on_Erledigt_itemClicked(QListWidgetItem *item)
+{
+    if(Loeschen){
+        delete item;
+    }
+    else{
+         erstelleItem(ui->AListe, item->text());
+        delete item;
+    }
+}
+
+
+
+void OrgaNicer::on_radioButton_clicked(bool checked)
+{
+    Loeschen = checked;
 }
 
