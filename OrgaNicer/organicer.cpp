@@ -138,7 +138,7 @@ void OrgaNicer::MonatsplanInit(){
 
     if(InitStatus){
         qDebug()<< "bereits initialisiert";
-        ui->textBrowser->setText("Kalender wurde bereits initialisiert");
+        //ui->textBrowser->setText("Kalender wurde bereits initialisiert");
     }
     else{
         qDebug()<<"Initialisierung";
