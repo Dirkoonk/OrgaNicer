@@ -12,12 +12,15 @@ OrgaNicer::OrgaNicer(QWidget *parent)
     , ui(new Ui::OrgaNicer)
 {
     ui->setupUi(this);
+    LeseListe(ui->AListe);
+    MonatsplanInit();
 
 }
 
 
 OrgaNicer::~OrgaNicer()
 {
+    SpeicherListe(ui->AListe);
     delete ui;
 }
 
