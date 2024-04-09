@@ -7,6 +7,7 @@
 
 QDate date = QDate::currentDate();
 bool Loeschen = false;
+bool resizeList = true;
 
 OrgaNicer::OrgaNicer(QWidget *parent)
     : QMainWindow(parent)
@@ -44,7 +45,10 @@ OrgaNicer::OrgaNicer(QWidget *parent)
 
 OrgaNicer::~OrgaNicer()
 {
-    SpeicherListe(ui->AListe);
+    if(resizeList){
+        SpeicherListe(ui->AListe);
+    }
+
     delete ui;
 }
 
@@ -81,6 +85,8 @@ void OrgaNicer::DateiInhaltLoeschen(){
     file.close();
 
     qDebug() << "Dateiinhalt erfolgreich gelöscht.";
+
+    resizeList = false;
 
 }
 
@@ -254,7 +260,7 @@ void OrgaNicer::MonatsplanInit(){
         }
     }
     qDebug()<< date.toString("yyyy.MM.00");
-    ListeDurchsuchenPassendEinblenden(date.toString("yyyy.MM.00"));
+    ListeDurchsuchenPassendEinblenden(date.toString("yyyy.MM"));
 }
 
 
