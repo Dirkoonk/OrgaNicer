@@ -40,38 +40,24 @@
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <layout class="QVBoxLayout" name="_2" stretch="0,10">
-      <property name="spacing">
-       <number>10</number>
+     <widget class="QCalendarWidget" name="calendarWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
       </property>
-      <property name="sizeConstraint">
-       <enum>QLayout::SetNoConstraint</enum>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
       </property>
-      <property name="leftMargin">
-       <number>0</number>
+      <property name="autoFillBackground">
+       <bool>false</bool>
       </property>
-      <property name="rightMargin">
-       <number>0</number>
-      </property>
-      <item>
-       <widget class="QCalendarWidget" name="calendarWidget">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>12</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="autoFillBackground">
-         <bool>false</bool>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">/* Hintergrundfarbe und Rahmen des Kalenderwidgets */
+      <property name="styleSheet">
+       <string notr="true">/* Hintergrundfarbe und Rahmen des Kalenderwidgets */
 QCalendarWidget {
     background-color: #f0f0f0; /* Hellgrau */
     border: 2px solid #444444; /* Dunkelgrau */
@@ -111,19 +97,19 @@ QCalendarWidget QWidget#qt_calendar_navigationbar {
     color: #ffffff; /* Weiß */
     border: none;
 }</string>
-        </property>
-       </widget>
-      </item>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_2">
+         <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout">
-            <item>
-             <widget class="QPushButton" name="pushButton_2">
-              <property name="styleSheet">
-               <string notr="true">/* Hintergrundfarbe und Rahmen des Buttons */
+           <widget class="QPushButton" name="pushButton_2">
+            <property name="styleSheet">
+             <string notr="true">/* Hintergrundfarbe und Rahmen des Buttons */
 QPushButton {
     background-color: lightblue;
     border: 2px solid darkblue;
@@ -146,16 +132,16 @@ QPushButton:hover {
 QPushButton:pressed {
     background-color: darkblue;
 }</string>
-              </property>
-              <property name="text">
-               <string>reset Datei</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QRadioButton" name="radioButton">
-              <property name="styleSheet">
-               <string notr="true">/* Hintergrundfarbe und Rahmen des Radio-Buttons */
+            </property>
+            <property name="text">
+             <string>reset Datei</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButton">
+            <property name="styleSheet">
+             <string notr="true">/* Hintergrundfarbe und Rahmen des Radio-Buttons */
 QRadioButton {
     background-color: #f0f0f0; /* Hellgrau */
     color: #000000; /* Schwarz */
@@ -194,31 +180,31 @@ QRadioButton::indicator {
 QRadioButton::indicator:hover {
     background-color: #cccccc; /* Grau */
 }</string>
-              </property>
-              <property name="text">
-               <string>Löschen</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <spacer name="verticalSpacer">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
             </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
+            <property name="text">
+             <string>Löschen</string>
             </property>
-           </spacer>
+           </widget>
           </item>
-          <item>
-           <widget class="QLineEdit" name="lineEdit">
-            <property name="styleSheet">
-             <string notr="true">/* Hintergrundfarbe und Rahmen des QLineEdit */
+         </layout>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit">
+          <property name="styleSheet">
+           <string notr="true">/* Hintergrundfarbe und Rahmen des QLineEdit */
 QLineEdit {
     background-color: #ffffff; /* Weiß */
     border: 1px solid #999999; /* Grau */
@@ -248,88 +234,86 @@ QLineEdit:!valid {
     background-color: #ffe0e0; /* Hellrot */
     border: 1px solid #cc0000; /* Dunkelrot */
 }</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout_3">
-          <property name="spacing">
-           <number>0</number>
           </property>
-          <item>
-           <widget class="QLabel" name="label">
-            <property name="font">
-             <font>
-              <pointsize>12</pointsize>
-              <bold>true</bold>
-              <underline>true</underline>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QLabel {
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+            <underline>true</underline>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
     background-color: rgb(255, 255, 127);
 	color: black;
 }</string>
-            </property>
-            <property name="text">
-             <string>To Do's</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QListWidget" name="AListe">
-            <property name="minimumSize">
-             <size>
-              <width>10</width>
-              <height>10</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QListWidget {
-    background-color: rgb(255, 255, 127);
-}</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
+          </property>
+          <property name="text">
+           <string>To Do's</string>
+          </property>
+         </widget>
         </item>
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_4">
-          <property name="spacing">
-           <number>0</number>
+         <widget class="QListWidget" name="AListe">
+          <property name="minimumSize">
+           <size>
+            <width>10</width>
+            <height>10</height>
+           </size>
           </property>
-          <item>
-           <widget class="QLabel" name="label_2">
-            <property name="font">
-             <font>
-              <pointsize>12</pointsize>
-              <bold>true</bold>
-              <underline>true</underline>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QLabel {
+          <property name="styleSheet">
+           <string notr="true">QListWidget {
+    background-color: rgb(255, 255, 127);
+}</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+            <underline>true</underline>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
     background-color: rgb(255, 255, 127);
 	color: black;
 }</string>
-            </property>
-            <property name="text">
-             <string>Erledigt</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QListWidget" name="Erledigt">
-            <property name="styleSheet">
-             <string notr="true">QListWidget {
+          </property>
+          <property name="text">
+           <string>Erledigt</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QListWidget" name="Erledigt">
+          <property name="styleSheet">
+           <string notr="true">QListWidget {
     background-color: rgb(255, 255, 127);
 }</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
